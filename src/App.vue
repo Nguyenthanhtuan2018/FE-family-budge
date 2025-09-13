@@ -1,12 +1,14 @@
-<template><div class='container'><header><h1>Family Budget</h1><nav><RouterLink to='/'>Dashboard</RouterLink><RouterLink to='/transactions'>Transactions</RouterLink><RouterLink to='/budgets'>Budgets</RouterLink></nav>  <div style="margin-left:auto;">
-    <template v-if="auth.isAuthenticated">
-      <span style="margin-right:8px; color: var(--muted);">{{ auth.user?.email }}</span>
-      <button @click="auth.logout()">Logout</button>
-    </template>
-    <template v-else>
-      <RouterLink to="/login">Login</RouterLink>
-    </template>
+<template>
+  <div class="container">
+    <header>
+      <h1>Family Budget</h1>
+      <nav>
+        <RouterLink to="/">Dashboard</RouterLink>
+        <RouterLink to="/transactions">Transactions</RouterLink>
+        <RouterLink to="/budgets">Budgets</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
+      </nav>
+    </header>
+    <RouterView />
   </div>
-</header><main><RouterView/></main></div></template><script setup>
-import { useAuth } from './stores/auth.js';
-const auth = useAuth();</script><style>:root{--bg:#fff;--fg:#111;--muted:#6b7280;--primary:#1f6feb;--card:#f7fafc}*{box-sizing:border-box}body,html,#app{margin:0;padding:0;height:100%;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}.container{max-width:980px;margin:0 auto;padding:16px}header{display:flex;align-items:center;gap:16px}nav a{margin-right:12px;color:var(--primary);text-decoration:none}nav a.router-link-active{font-weight:600}main{margin-top:16px}.card{background:var(--card);padding:12px 14px;border-radius:8px;border:1px solid #e5e7eb}.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}input,select,button{padding:8px 10px;border-radius:6px;border:1px solid #d1d5db;font-size:14px}button{background:var(--primary);color:#fff;border:none;cursor:pointer}button:disabled{background:#9ca3af;cursor:not-allowed}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #e5e7eb;text-align:left}th{color:var(--muted);font-weight:600}.amount{text-align:right;font-variant-numeric:tabular-nums}</style>
+</template>
