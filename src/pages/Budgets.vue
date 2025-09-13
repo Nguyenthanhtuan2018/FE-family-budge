@@ -1,0 +1,1 @@
+<template><div class='card'><h2>Budgets</h2><p>Coming soon: envelope budgets per month.</p></div></template><script setup></script>

@@ -1,0 +1,1 @@
+<template><div class='card'><h2>Dashboard</h2><p>Welcome to Family Budget. Go to <router-link to='/transactions'>Transactions</router-link> to add your first record.</p></div></template><script setup></script>
